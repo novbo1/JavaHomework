@@ -1,46 +1,26 @@
 /**
  * The CarApplication class serves as a driver to test the functionality of the Car class.
  **/
-import java.util.Scanner;
 
 public class CarApplication{
 	
 	public static void main(String[] args) {
-		//Declare input
-		String model,year;
-		double price;
+		//Create car object
+		Car car1 = new Car("First car" , "1980" , 500);
+		Car car2 = new Car("Second car" , "1990" , 1000);
 		
+		//Original display
+		System.out.println("The Car's description before discount: ");
+		car1.printDescription();
+		car2.printDescription();
 		
-		Scanner input = new Scanner(System.in);
+		//Discount
+		car1.setPrice(car1.getPrice()*1.05);
+		car2.setPrice(car1.getPrice()*1.07);
 		
-		//Initialize
-		System.out.print("Enter model: ");
-		model = input.nextLine();
-		System.out.print("Enter year: " );
-		year = input.nextLine();
-		System.out.print("Enter price: ");
-		price = input.nextDouble();
-		
-		//Test Constructor
-		Car car1 = new Car(model,year,price);
-		
-		//Test Accessor
-		System.out.printf("%nThe car's description: %n");
-		System.out.printf("Model: %s%n",car1.getModel());
-		System.out.printf("Year: %s%n", car1.getYear());
-		System.out.printf("Price: %.2f%n",car1.getPrice());
-		
-		//Get new information for Car
-		System.out.print("Enter model: ");
-		model = input.nextLine();
-		System.out.print("Enter year: " );
-		year = input.nextLine();
-		System.out.print("Enter price: ");
-		price = input.nextDouble();
-		
-		Car car2 = new Car("Null","Null",0);
-		
-		//Test Mutator
-		car2.setCar("Second Car", "1990", 25000);
+		//Discount display
+		System.out.println("The Car's description after discount: ");
+		car1.printDescription();
+		car2.printDescription();
 	}
 }

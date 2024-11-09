@@ -19,6 +19,7 @@
  * - getYear(): Returns the year of the car.
  * - getPrice(): Returns the price of the car if it's positive; otherwise, returns -1.
  **/
+
 public class Car {
 	//Private attribute
 	private String model;
@@ -39,6 +40,18 @@ public class Car {
 		this.price = (price>0) ? price : -1;  //if price isn't postive, return -1
 	}
 	
+	public void setModel(String model) {
+		this.model = model;
+	}
+	
+	public void setYear(String year) {
+		this.year = year;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
 	//Accessor
 	public String getModel() {
 		return model;
@@ -50,6 +63,15 @@ public class Car {
 	
 	public double getPrice() {
 		return price;
+	}
+	
+	//Function
+	public void printDescription() {
+		System.out.println("------The Description------");
+		System.out.printf("The model: %s%n",model);
+		System.out.printf("The year: %s%n",year);
+		System.out.printf("The price: %.2f%n",price);
+		System.out.println();
 	}
 
 }
